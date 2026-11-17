@@ -1,0 +1,24 @@
+# Composer Dependencies
+/vendor/
+
+# User Uploaded Media
+/uploads/portfolio/*
+!/uploads/portfolio/.gitkeep
+/uploads/profiles/*
+!/uploads/profiles/.gitkeep
+
+# Environment & Logs
+.env
+.env.local
+*.log
+
+# Editor & IDE configurations
+.vscode/
+.idea/
+*.sublime-project
+*.sublime-workspace
+
+# Operating System files
+Thumbs.db
+Desktop.ini
+.DS_Store

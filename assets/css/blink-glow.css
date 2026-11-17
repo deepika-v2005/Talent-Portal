@@ -1,0 +1,75 @@
+/* ============================================================
+   GLOBAL BUTTON BLINK / GLOW EFFECT
+   Applies to every button-like element across all modules
+   (worker pages, client pages, login/register/index, etc.)
+   ============================================================ */
+
+@keyframes btn-blink-glow {
+  0%, 100% {
+    box-shadow: 0 0 6px rgba(99, 102, 241, 0.5),
+                0 0 12px rgba(99, 102, 241, 0.3);
+    filter: brightness(1);
+  }
+  50% {
+    box-shadow: 0 0 18px rgba(99, 102, 241, 0.9),
+                0 0 32px rgba(99, 102, 241, 0.6);
+    filter: brightness(1.12);
+  }
+}
+
+/* No blink by default. Blink is added ONLY on the element that is
+   touched/clicked, via the .blink-active class (added by blink-touch.js). */
+button,
+.btn,
+.button,
+input[type="submit"],
+input[type="button"],
+a.btn,
+a.button,
+.nav-item,
+.sb-nav a,
+.action-btn,
+.card-btn,
+.apply-btn,
+.primary-btn,
+.submit-btn {
+  animation: none;
+}
+
+/* Blink only the tapped/clicked element, for 2 quick blinks, then stop */
+button.blink-active,
+.btn.blink-active,
+.button.blink-active,
+input[type="submit"].blink-active,
+input[type="button"].blink-active,
+a.btn.blink-active,
+a.button.blink-active,
+.nav-item.blink-active,
+.sb-nav a.blink-active,
+.action-btn.blink-active,
+.card-btn.blink-active,
+.apply-btn.blink-active,
+.primary-btn.blink-active,
+.submit-btn.blink-active {
+  animation: btn-blink-glow 0.35s ease-in-out 2;
+}
+
+/* Respect users who prefer reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  button.blink-active,
+  .btn.blink-active,
+  .button.blink-active,
+  input[type="submit"].blink-active,
+  input[type="button"].blink-active,
+  a.btn.blink-active,
+  a.button.blink-active,
+  .nav-item.blink-active,
+  .sb-nav a.blink-active,
+  .action-btn.blink-active,
+  .card-btn.blink-active,
+  .apply-btn.blink-active,
+  .primary-btn.blink-active,
+  .submit-btn.blink-active {
+    animation: none;
+  }
+}
